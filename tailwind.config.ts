@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  // IMPORTANT: This tells Tailwind where to look for classes.
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,123 +9,144 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // 1. Text Colors (text-*)
+      // 1. TEXT COLORS
       textColor: {
-        heading: {
-          DEFAULT: 'var(--text-heading)',
-          hover: 'var(--text-heading-hover)',
-        },
-        body: {
-          DEFAULT: 'var(--text-body)',
-          strong: 'var(--text-body-strong)',
-          soft: 'var(--text-body-soft)',
-        },
-        caption: {
-          DEFAULT: 'var(--text-caption)',
-          hover: 'var(--text-caption-hover)',
-        },
-        inverse: {
-          DEFAULT: 'var(--text-inverse)',
-          soft: 'var(--text-inverse-soft)',
-        },
-        link: {
-          DEFAULT: 'var(--text-link)',
-          hover: 'var(--text-link-hover)',
-          active: 'var(--text-link-active)',
-          visited: 'var(--text-link-visited)',
-        },
-        action: {
-          primary: 'var(--text-action-primary)',
-          secondary: 'var(--text-action-secondary)',
-          ghost: {
-            DEFAULT: 'var(--text-action-ghost)',
-            hover: 'var(--text-action-ghost-hover)',
-          },
-        },
-        // Feedback Text
-        error: { DEFAULT: 'var(--text-error)', hover: 'var(--text-error-hover)' },
-        success: { DEFAULT: 'var(--text-success)', hover: 'var(--text-success-hover)' },
-        warning: { DEFAULT: 'var(--text-warning)', hover: 'var(--text-warning-hover)' },
-        info: { DEFAULT: 'var(--text-info)', hover: 'var(--text-info-hover)' },
+        heading: 'var(--text-heading)',
+        body: 'var(--text-body)',
+        caption: 'var(--text-caption)',
+        placeholder: 'var(--text-placeholder)',
+        code: 'var(--text-code)',
+        selected: 'var(--text-selected)',
+        'inv-heading': 'var(--text-inv-heading)',
+        'inv-body': 'var(--text-inv-body)',
+        'inv-caption': 'var(--text-inv-caption)',
+        'inv-placeholder': 'var(--text-inv-placeholder)',
+        'link-def': 'var(--text-link-def)',
+        'link-hov': 'var(--text-link-hov)',
+        'link-act': 'var(--text-link-act)',
+        'link-visited': 'var(--text-link-visited)',
+        'action-def': 'var(--text-action-def)',
+        'action-hov': 'var(--text-action-hov)',
+        'action-act': 'var(--text-action-act)',
+        'action-dis': 'var(--text-action-dis)',
+        'success-def': 'var(--text-success-def)',
+        'success-hov': 'var(--text-success-hov)',
+        'success-oncolor': 'var(--text-success-oncolor)',
+        'success-oncolor-hov': 'var(--text-success-oncolor-hov)',
+        'error-def': 'var(--text-error-def)',
+        'error-hov': 'var(--text-error-hov)',
+        'error-oncolor': 'var(--text-error-oncolor)',
+        'error-oncolor-hov': 'var(--text-error-oncolor-hov)',
+        'warning-def': 'var(--text-warning-def)',
+        'warning-hov': 'var(--text-warning-hov)',
+        'warning-oncolor': 'var(--text-warning-oncolor)',
+        'warning-oncolor-hov': 'var(--text-warning-oncolor-hov)',
+        'info-def': 'var(--text-info-def)',
+        'info-hov': 'var(--text-info-hov)',
+        'info-oncolor': 'var(--text-info-oncolor)',
+        'info-oncolor-hov': 'var(--text-info-oncolor-hov)',
+        'disabled-def': 'var(--text-disabled-def)',
+        'disabled-oncolor': 'var(--text-disabled-oncolor)',
       },
-
-      // 2. Background Colors (bg-*)
+      // 2. BACKGROUND COLORS
       backgroundColor: {
-        surface: {
-          page: 'var(--surface-page)',
-          panel: {
-            DEFAULT: 'var(--surface-panel)',
-            hover: 'var(--surface-panel-hover)',
-          },
-          overlay: 'var(--surface-overlay)',
-          card: {
-            DEFAULT: 'var(--surface-card)',
-            hover: 'var(--surface-card-hover)',
-            active: 'var(--surface-card-active)',
-          },
-          primary: {
-            DEFAULT: 'var(--surface-primary)',
-            hover: 'var(--surface-primary-hover)',
-            active: 'var(--surface-primary-active)',
-            disabled: 'var(--surface-primary-disabled)',
-          },
-          secondary: {
-            DEFAULT: 'var(--surface-secondary)',
-            hover: 'var(--surface-secondary-hover)',
-            active: 'var(--surface-secondary-active)',
-          },
-          ghost: {
-            DEFAULT: 'var(--surface-ghost)',
-            hover: 'var(--surface-ghost-hover)',
-            active: 'var(--surface-ghost-active)',
-          },
-          input: {
-            DEFAULT: 'var(--surface-input)',
-            disabled: 'var(--surface-input-disabled)',
-          },
-          // Feedback Surfaces
-          error: { 
-            DEFAULT: 'var(--surface-error)', 
-            soft: { DEFAULT: 'var(--surface-error-soft)', hover: 'var(--surface-error-soft-hover)' } 
-          },
-          success: { 
-            DEFAULT: 'var(--surface-success)', 
-            soft: { DEFAULT: 'var(--surface-success-soft)', hover: 'var(--surface-success-soft-hover)' } 
-          },
-          warning: { 
-            DEFAULT: 'var(--surface-warning)', 
-            soft: { DEFAULT: 'var(--surface-warning-soft)', hover: 'var(--surface-warning-soft-hover)' } 
-          },
-          info: { 
-            DEFAULT: 'var(--surface-info)', 
-            soft: { DEFAULT: 'var(--surface-info-soft)', hover: 'var(--surface-info-soft-hover)' } 
-          },
-        },
+        // Debug Color (If you see this, Tailwind is working)
+        'debug-red': '#ff0000',
+        
+        'base-white': 'var(--base-white)',
+        'base-black': 'var(--base-black)',
+        'base-transparent': 'var(--base-transparent)',
+        'page-pri': 'var(--surf-page-pri)',
+        'page-sec': 'var(--surf-page-sec)',
+        'overlay': 'var(--surf-overlay)',
+        'selected': 'var(--surf-selected)',
+        'card-pri-def': 'var(--surf-card-pri-def)',
+        'card-pri-hov': 'var(--surf-card-pri-hov)',
+        'card-pri-act': 'var(--surf-card-pri-act)',
+        'card-sec-def': 'var(--surf-card-sec-def)',
+        'card-sec-hov': 'var(--surf-card-sec-hov)',
+        'card-sec-act': 'var(--surf-card-sec-act)',
+        'action-pri-def': 'var(--surf-action-pri-def)',
+        'action-pri-hov': 'var(--surf-action-pri-hov)',
+        'action-pri-act': 'var(--surf-action-pri-act)',
+        'action-pri-dis': 'var(--surf-action-pri-dis)',
+        'action-sec-def': 'var(--surf-action-sec-def)',
+        'action-sec-hov': 'var(--surf-action-sec-hov)',
+        'action-sec-act': 'var(--surf-action-sec-act)',
+        'action-sec-dis': 'var(--surf-action-sec-dis)',
+        'action-sub-def': 'var(--surf-action-sub-def)',
+        'action-sub-hov': 'var(--surf-action-sub-hov)',
+        'action-sub-act': 'var(--surf-action-sub-act)',
+        'action-sub-dis': 'var(--surf-action-sub-dis)',
+        'input-def': 'var(--surf-input-def)',
+        'input-hov': 'var(--surf-input-hov)',
+        'input-focus': 'var(--surf-input-focus)',
+        'input-dis': 'var(--surf-input-dis)',
+        'success-solid-def': 'var(--surf-success-solid-def)',
+        'success-solid-hov': 'var(--surf-success-solid-hov)',
+        'success-solid-act': 'var(--surf-success-solid-act)',
+        'error-solid-def': 'var(--surf-error-solid-def)',
+        'error-solid-hov': 'var(--surf-error-solid-hov)',
+        'error-solid-act': 'var(--surf-error-solid-act)',
+        'warning-solid-def': 'var(--surf-warning-solid-def)',
+        'warning-solid-hov': 'var(--surf-warning-solid-hov)',
+        'warning-solid-act': 'var(--surf-warning-solid-act)',
+        'info-solid-def': 'var(--surf-info-solid-def)',
+        'info-solid-hov': 'var(--surf-info-solid-hov)',
+        'info-solid-act': 'var(--surf-info-solid-act)',
+        'success-soft-def': 'var(--surf-success-soft-def)',
+        'success-soft-hov': 'var(--surf-success-soft-hov)',
+        'success-soft-act': 'var(--surf-success-soft-act)',
+        'error-soft-def': 'var(--surf-error-soft-def)',
+        'error-soft-hov': 'var(--surf-error-soft-hov)',
+        'error-soft-act': 'var(--surf-error-soft-act)',
+        'warning-soft-def': 'var(--surf-warning-soft-def)',
+        'warning-soft-hov': 'var(--surf-warning-soft-hov)',
+        'warning-soft-act': 'var(--surf-warning-soft-act)',
+        'info-soft-def': 'var(--surf-info-soft-def)',
+        'info-soft-hov': 'var(--surf-info-soft-hov)',
+        'info-soft-act': 'var(--surf-info-soft-act)',
       },
-
-      // 3. Border Colors (border-*)
+      // 3. BORDER COLORS
       borderColor: {
-        base: 'var(--border-base)',
-        subtle: 'var(--border-subtle)',
-        strong: 'var(--border-strong)',
-        inverse: 'var(--border-inverse)',
-        input: {
-          DEFAULT: 'var(--border-input)',
-          hover: 'var(--border-input-hover)',
-          focus: 'var(--border-input-focus)',
-        },
-        primary: 'var(--border-primary)',
-        secondary: 'var(--border-secondary)',
-        error: { DEFAULT: 'var(--border-error)', focus: 'var(--border-error-focus)' },
-        success: 'var(--border-success)',
-        warning: 'var(--border-warning)',
-        info: 'var(--border-info)',
+        'div-pri': 'var(--border-div-pri)',
+        'div-sec': 'var(--border-div-sec)',
+        'action-def': 'var(--border-action-def)',
+        'action-hov': 'var(--border-action-hov)',
+        'action-act': 'var(--border-action-act)',
+        'action-dis': 'var(--border-action-dis)',
+        'input-def': 'var(--border-input-def)',
+        'input-hov': 'var(--border-input-hov)',
+        'input-focus': 'var(--border-input-focus)',
+        'input-dis': 'var(--border-input-dis)',
+        'focus-ring': 'var(--border-focus-ring)',
+        'selected': 'var(--border-selected)',
+        'success-def': 'var(--border-success-def)',
+        'success-hov': 'var(--border-success-hov)',
+        'success-subtle': 'var(--border-success-subtle)',
+        'success-subtle-hov': 'var(--border-success-subtle-hov)',
+        'success-focus': 'var(--border-success-focus)',
+        'error-def': 'var(--border-error-def)',
+        'error-hov': 'var(--border-error-hov)',
+        'error-subtle': 'var(--border-error-subtle)',
+        'error-subtle-hov': 'var(--border-error-subtle-hov)',
+        'error-focus': 'var(--border-error-focus)',
+        'warning-def': 'var(--border-warning-def)',
+        'warning-hov': 'var(--border-warning-hov)',
+        'warning-subtle': 'var(--border-warning-subtle)',
+        'warning-subtle-hov': 'var(--border-warning-subtle-hov)',
+        'warning-focus': 'var(--border-warning-focus)',
+        'info-def': 'var(--border-info-def)',
+        'info-hov': 'var(--border-info-hov)',
+        'info-subtle': 'var(--border-info-subtle)',
+        'info-subtle-hov': 'var(--border-info-subtle-hov)',
+        'info-focus': 'var(--border-info-focus)',
       },
-
-      // 4. Ring Colors (ring-*) - Used for Focus Rings
+      // 4. RING COLORS
       ringColor: {
-        focus: 'var(--border-focus-ring)',
-      },
+        'focus-ring': 'var(--border-focus-ring)',
+        'error-focus': 'var(--border-error-focus)',
+      }
     },
   },
   plugins: [],
